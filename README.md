@@ -1,0 +1,1 @@
+This is a django/react blog app for my personal writing and reading.
