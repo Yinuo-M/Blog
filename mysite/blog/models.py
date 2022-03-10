@@ -2,9 +2,9 @@ from django.db import models
 from django.contrib.auth.models import User
 
 STATUS = (
-    (0, 'Draft'),
-    (1, 'Published'),
-    (2, 'Archived')
+    ('DR', 'Draft'),
+    ('PU', 'Published'),
+    ('AR', 'Archived')
 )
 
 CATEGORY = (
@@ -25,8 +25,8 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
-    category = models.IntegerField(choices=CATEGORY)
+    status = models.CharField(choices=STATUS, max_length=2, default=0)
+    category = models.CharField(choices=CATEGORY, max_length=2)
     image = models.ImageField(upload_to='images/')
 
     class Meta:
