@@ -22,7 +22,7 @@ class Post(models.Model):
         User, on_delete=models.CASCADE, related_name='blog_post')
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
-    created_on = models.DateTimeFIeld(auto_now_add=True)
+    created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     category = models.IntegerField(choices=CATEGORY)
     image = models.ImageField(upload_to='images/')
