@@ -27,10 +27,10 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.CharField(choices=STATUS, max_length=2, default=0)
     category = models.CharField(choices=CATEGORY, max_length=2)
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='images/', blank=True)
+
+    def __str__(self):
+        return self.title
 
     class Meta:
         ordering = ['-created_on']
-
-        def __str__(self):
-            return self.title
