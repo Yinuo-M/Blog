@@ -25,6 +25,7 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
+    originally_written_on = models.DateTimeField(null=True)
     status = models.CharField(choices=STATUS, max_length=2, default=0)
     category = models.CharField(choices=CATEGORY, max_length=2)
     image = models.ImageField(upload_to='images/', blank=True)
