@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from blog.models import Post
+from blog.models import Fragment
 
 
-class PostSerializer(serializers.ModelSerializer):
+class FragmentSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Post
+        model = Fragment
         exclude = ['created_by', 'updated_on', 'created_on']

@@ -1,8 +1,8 @@
 from django.contrib import admin
-from blog.models import Post
+from blog.models import Fragment
 
 
-class PostAdmin(admin.ModelAdmin):
+class FragmentAdmin(admin.ModelAdmin):
     list_display = ('title', 'category', 'author',
                     'slug', 'status', 'originally_written_on')
     list_filter = ('status', 'category')
@@ -11,4 +11,4 @@ class PostAdmin(admin.ModelAdmin):
     date_hierarchy = 'originally_written_on'
 
 
-admin.site.register(Post, PostAdmin)
+admin.site.register(Fragment, FragmentAdmin)

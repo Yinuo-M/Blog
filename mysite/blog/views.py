@@ -1,14 +1,14 @@
 from rest_framework import generics
 
-from blog.models import Post
-from blog.serializers import PostSerializer
+from blog.models import Fragment
+from blog.serializers import FragmentSerializer
 
 
-class PostList(generics.ListCreateAPIView):
-    queryset = Post.objects.all()
-    serializer_class = PostSerializer
+class FragmentList(generics.ListCreateAPIView):
+    queryset = Fragment.objects.all()
+    serializer_class = FragmentSerializer
 
 
-class PostDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Post.objets.all()
-    serializer_class = PostSerializer
+class FragmentDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Fragment.objects.all()
+    serializer_class = FragmentSerializer
