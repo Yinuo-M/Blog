@@ -28,5 +28,7 @@ module.exports = {
     'import/extensions': 'off',
     'react/function-component-definition': 'off',
     'object-curly-newline': 'off',
+    'react/require-default-props': 'off',
+    'react/jsx-props-no-spreading': 'off',
   },
 };
