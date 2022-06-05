@@ -1,0 +1,72 @@
+// Colours
+@mixin light-colours {
+  --bg-colour: #f4f5f8;
+  --text-colour: #000000;
+  --link-colour: #5990e2;
+}
+
+@mixin dark-colours {
+  --bg-colour: #252525;
+  --text-colour: #edf0f5;
+  --link-colour: #9ec3ff;
+}
+
+// Breakpoints
+$small: 744px;
+$medium: 1024px;
+$large: 1440px;
+
+//Fonts
+$chinese: 'Noto Serif SC', serif;
+$english: 'EB Garamond', serif;
+@mixin language($lan: 'en') {
+  @if $lan == 'en' {
+    font-family: $english;
+  } @else if $lan == 'ch' {
+    font-family: $chinese;
+  }
+}
+
+@mixin header($lan: 'en') {
+  colour: var(--text-colour);
+  font-weight: 500;
+  font-size: 1.25rem;
+
+  @include language($lan);
+
+  @media screen and (min-width: $small) {
+    font-size: 1.56rem;
+  }
+
+  @media screen and (min-width: $medium) {
+    font-size: 2rem;
+  }
+}
+
+@mixin heading($lan: 'en') {
+  colour: var(--text-colour);
+  font-weight: 600;
+  font-size: 1.56rem;
+
+  @include language($lan);
+
+  @media screen and (min-width: $medium) {
+    font-size: 2rem;
+  }
+}
+
+@mixin body($lan: 'en') {
+  colour: var(--text-colour);
+  font-weight: 500;
+  font-size: 1rem;
+
+  @include language($lan);
+
+  @media screen and (min-width: $small) {
+    font-size: 1.125rem;
+  }
+
+  @media screen and (min-width: $medium) {
+    font-size: 1.25rem;
+  }
+}
