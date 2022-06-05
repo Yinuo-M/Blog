@@ -21,11 +21,11 @@ LANGUAGE = (
 
 class Fragment(models.Model):
     # Add an image field and a category field
-    title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
+    title = models.CharField(max_length=50)
     created_by = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='fragment')
-    author = models.CharField(max_length=50)
+    chinese_author = models.CharField(max_length=50)
+    english_author = models.CharField(max_length=50)
     origin = models.CharField(max_length=100, blank=True)
     updated_on = models.DateTimeField(auto_now=True)
     english_content = models.TextField(blank=True)
@@ -36,6 +36,7 @@ class Fragment(models.Model):
     category = models.CharField(choices=CATEGORY, max_length=2, default='WR')
     language = models.CharField(choices=LANGUAGE, max_length=2, default='CH')
     image = models.ImageField(upload_to='images/', blank=True)
+    image_alt = models.CharField(max_length=50)
 
     def __str__(self):
         return self.title

@@ -3,11 +3,10 @@ from blog.models import Fragment
 
 
 class FragmentAdmin(admin.ModelAdmin):
-    list_display = ('title', 'category', 'author',
-                    'slug', 'status', 'originally_written_on')
+    list_display = ('title', 'category', 'english_author',
+                    'status', 'originally_written_on')
     list_filter = ('status', 'category')
-    search_fields = ['title', 'content', 'author']
-    prepopulated_fields = {'slug': ("title",)}
+    search_fields = ['title', 'english_content', 'chinese_content', 'english_author', 'chinese_author', 'origin']
     date_hierarchy = 'originally_written_on'
 
 
