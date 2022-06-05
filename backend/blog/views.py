@@ -9,6 +9,6 @@ class FragmentList(generics.ListCreateAPIView):
     serializer_class = FragmentSerializer
 
 
-class FragmentDetail(generics.RetrieveUpdateDestroyAPIView):
+class FragmentDetail(generics.RetrieveAPIView):
     queryset = Fragment.objects.all()
     serializer_class = FragmentSerializer
