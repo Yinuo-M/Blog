@@ -36,7 +36,7 @@ class Fragment(models.Model):
     category = models.CharField(choices=CATEGORY, max_length=2, default='WR')
     language = models.CharField(choices=LANGUAGE, max_length=2, default='CH')
     image = models.ImageField(upload_to='media/images/', blank=True)
-    image_alt = models.CharField(max_length=50)
+    image_alt = models.CharField(max_length=50, blank=True)
 
     def __str__(self):
         return self.title
