@@ -1,0 +1,24 @@
+@import '@/styles/lib';
+
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.buttonWrapper {
+  @include ui;
+  &::after {
+    content: '/';
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  &:last-child::after {
+    content: none;
+  }
+}
+
+.selected {
+  text-decoration: underline;
+}
