@@ -1,4 +1,4 @@
-@use './lib.scss';
+@import './lib';
 
 html,
 body {
@@ -18,5 +18,9 @@ a {
 
 button {
   border: none;
-  background-color: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
 }

@@ -27,12 +27,10 @@ $english: 'EB Garamond', serif;
   }
 }
 
-@mixin header($lan: 'en') {
+@mixin header() {
   colour: var(--text-colour);
   font-weight: 500;
   font-size: 1.25rem;
-
-  @include language($lan);
 
   @media screen and (min-width: $small) {
     font-size: 1.56rem;
@@ -43,30 +41,32 @@ $english: 'EB Garamond', serif;
   }
 }
 
-@mixin heading($lan: 'en') {
+@mixin heading() {
   colour: var(--text-colour);
   font-weight: 600;
   font-size: 1.56rem;
-
-  @include language($lan);
 
   @media screen and (min-width: $medium) {
     font-size: 2rem;
   }
 }
 
-@mixin body($lan: 'en') {
+@mixin ui() {
+  colour: var(--text-colour);
+  font-weight: 400;
+  font-size: 1.25rem;
+
+  @media screen and (min-width: $medium) {
+    font-size: 1.5rem;
+  }
+}
+
+@mixin body() {
   colour: var(--text-colour);
   font-weight: 500;
   font-size: 1rem;
 
-  @include language($lan);
-
-  @media screen and (min-width: $small) {
-    font-size: 1.125rem;
-  }
-
   @media screen and (min-width: $medium) {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
 }
