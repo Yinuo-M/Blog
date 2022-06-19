@@ -1,0 +1,40 @@
+@import '@/styles/lib';
+
+@mixin appear($name, $perc) {
+  @keyframes #{$name} {
+    from {
+      opacity: 0;
+    }
+
+    #{$perc} {
+      opacity: 1;
+    }
+  }
+}
+
+@include appear(appearOne, 25%);
+@include appear(appearTwo, 50%);
+@include appear(appearThree, 75%);
+
+.loader {
+  @include heading;
+  font-weight: 400;
+}
+
+.dotOne {
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: step-end;
+  animation-delay: 0.2s;
+  animation-name: appearOne;
+}
+
+.dotTwo {
+  composes: dotOne;
+  animation-name: appearTwo;
+}
+
+.dotThree {
+  composes: dotOne;
+  animation-name: appearThree;
+}
