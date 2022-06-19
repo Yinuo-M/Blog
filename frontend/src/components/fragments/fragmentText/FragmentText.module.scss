@@ -1,0 +1,44 @@
+@import '@/styles/lib';
+
+.fragmentText {
+  @include body;
+  padding-left: 0.5rem;
+  border-left: 0.25rem solid var(--text-colour);
+
+  @media screen and (min-width: $small) {
+    padding-left: 0.75rem;
+    max-width: 40rem;
+  }
+
+  @media screen and (min-width: $small) {
+    max-width: 31.5rem;
+  }
+}
+
+.contentWrapper {
+  margin-bottom: 2rem;
+}
+
+.contentEn {
+  @include language;
+  margin: 0 0 1rem 0;
+}
+
+.contentCh {
+  composes: contentEn;
+  @include language('ch');
+}
+
+.contentBottom {
+  margin-top: 2rem;
+}
+
+.meta {
+  display: block;
+  font-weight: 400;
+}
+
+.italicMeta {
+  composes: meta;
+  font-style: italic;
+}
