@@ -1,0 +1,17 @@
+@import '@/styles/lib';
+
+.dark {
+  @include dark-colours;
+}
+
+.light {
+  @include light-colours;
+}
+
+.english {
+  @include language('en');
+}
+
+.chinese {
+  @include language('ch');
+}
