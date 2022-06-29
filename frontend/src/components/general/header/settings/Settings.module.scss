@@ -1,0 +1,13 @@
+@import '@/styles/lib';
+
+.settings {
+  @include ui;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+
+  @media screen and (min-width: $medium) {
+    gap: 1rem;
+  }
+}
